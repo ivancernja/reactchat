@@ -9,6 +9,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  Button,
+  Image,
   View
 } from 'react-native';
 import * as firebase from 'firebase';
@@ -27,17 +29,23 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 export default class ChatReact extends Component {
   render() {
     return (
+
       <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={{uri: 'https://media.giphy.com/media/tN3vUg9atNni0/giphy.gif'}}
+        />
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to ChatReact!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          To get started, please click on the button below.
         </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Button
+          title="Start chatting"
+          color="blue"
+          accessibilityLabel="Tap to start chatting"
+        />
       </View>
     );
   }
@@ -50,16 +58,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
+  logo: {
+    width: 150,
+    height: 150
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
+  login: {
     textAlign: 'center',
-    color: '#333333',
+    color: 'blue',
     marginBottom: 5,
   },
 });
 
 AppRegistry.registerComponent('ChatReact', () => ChatReact);
+// App registration and rendering
+AppRegistry.registerComponent('DisplayAnImage', () => DisplayAnImage);
