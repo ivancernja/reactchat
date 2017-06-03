@@ -11,6 +11,18 @@ import {
   Text,
   View
 } from 'react-native';
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBIjqEXPPvCPG35S4r11sX3qGyDRvXqu94",
+    authDomain: "chatreact-6caa6.firebaseapp.com",
+    databaseURL: "https://chatreact-6caa6.firebaseio.com",
+    projectId: "chatreact-6caa6",
+    storageBucket: "chatreact-6caa6.appspot.com",
+    messagingSenderId: "77417068086"
+};
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default class ChatReact extends Component {
   render() {
