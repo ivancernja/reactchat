@@ -12,6 +12,7 @@
 		"moment": "^2.18.1",
 		"react": "16.0.0-alpha.6",
 		"react-native": "0.44.2",
+		"react-native-gifted-chat": "^0.1.4",
 		"react-native-keyboard-aware-scroll-view": "^0.2.9",
 		"react-native-router-flux": "^3.39.2",
 		"redux": "^3.6.0",

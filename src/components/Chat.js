@@ -4,15 +4,23 @@ import {
     Text,
     StyleSheet,
 } from 'react-native';
+import {GiftedChat} from 'react-native-gifted-chat'
 
 export default class Chat extends React.Component {
+    state = {
+        messages: []
+    }
     render() {
         return (
-            <View>
-                <Text style={styles.welcome}>
-                    Welcome, {this.props.name}
-                </Text>
-            </View>
+            <GiftedChat
+                messages={this.state.messages}
+                onSend={(message) => {
+                    //Send message
+                }}
+                user={{
+                    _id: 1,
+                }}
+                />
         );
     }
 }
