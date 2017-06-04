@@ -11,6 +11,7 @@ import {
   TextInput,
   Button,
   Image,
+  DatePickerIOS,
   View
 } from 'react-native';
 
@@ -19,9 +20,19 @@ import {
 } from 'react-native-router-flux'
 
 export default class Home extends React.Component {
+  static defaultProps = {
+    date: new Date(),
+    timeZoneOffsetInHours: (-1) * (new Date()).getTimezoneOffset() / 60,
+  };
   state = {
     name: '',
+    date: this.props.date,
+    timeZoneOffsetInHours: this.props.timeZoneOffsetInHours,
   };
+  onDateChange = (date) => {
+    this.setState({date: date});
+  }
+
   render() {
     return (
 
@@ -46,6 +57,15 @@ export default class Home extends React.Component {
           }}
           value={this.state.name}
         />
+        <Text style={styles.instructions}>
+          And your age:
+        </Text>
+        <DatePickerIOS style={styles.datepicker}
+          date={this.state.date}
+          mode="date"
+          timeZoneOffsetInMinutes={this.state.timeZoneOffsetInHours * 60}
+          onDateChange={this.onDateChange}
+          />
         <Button
           onPress={() => {
             Actions.chat({
@@ -72,6 +92,9 @@ const styles = StyleSheet.create({
   logo: {
     width: 150,
     height: 150
+  },
+  datepicker: {
+    alignSelf: 'stretch',
   },
   welcome: {
     fontSize: 20,
