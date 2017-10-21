@@ -24,6 +24,7 @@ export default class Chat extends React.Component {
                 user={{
                     _id: Backend.getUid(),
                     name: this.props.name,
+                    date: this.props.date
                 }}
                 />
         );

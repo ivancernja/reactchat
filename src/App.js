@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <Scene key='root'>
-          <Scene key='home' title='Home' component={Home}/>
+          <Scene key='home' title='Home' component={Home}/> 
           <Scene key='chat' title='Chat' component={Chat}/>
         </Scene>
       </Router>

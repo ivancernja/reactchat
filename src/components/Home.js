@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 import React, {Component} from 'react';
 import {
   AppRegistry,
@@ -67,10 +62,13 @@ export default class Home extends React.Component {
           onDateChange={this.onDateChange}
           />
         <Button
-          onPress={() => {
+          onPress={() => { 
+            if (this.state.name.length == 0) {
+              alert ("Please input your name.")
+            } else {
             Actions.chat({
                 name: this.state.name,
-            });
+            })};
             // navigate to chat screen
           }}
           title="Start chatting!"
@@ -116,4 +114,3 @@ const styles = StyleSheet.create({
 
 // App registration and rendering
 AppRegistry.registerComponent('DisplayAnImage', () => DisplayAnImage);
-
